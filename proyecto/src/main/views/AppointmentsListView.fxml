@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.input.MouseEvent?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AppointmentsListController">
+    <children>
+        <!-- Título de la vista -->
+        <Label text="Turnos Activos" layoutX="150.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <!-- TableView para mostrar los turnos -->
+        <TableView fx:id="appointmentsTable" layoutX="20.0" layoutY="60.0" prefWidth="460.0" prefHeight="300.0">
+            <columns>
+                <!-- Columna para el nombre del médico -->
+                <TableColumn fx:id="doctorColumn" text="Médico" prefWidth="150.0">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="doctor"/>
+                    </cellValueFactory>
+                </TableColumn>
+                
+                <!-- Columna para la fecha y hora del turno -->
+                <TableColumn fx:id="datetimeColumn" text="Fecha y Hora" prefWidth="150.0">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="datetime"/>
+                    </cellValueFactory>
+                </TableColumn>
+                
+                <!-- Columna para las acciones (botón de cancelar turno) -->
+                <TableColumn fx:id="actionsColumn" text="Acciones" prefWidth="160.0">
+                    <cellFactory>
+                        <!-- Celda personalizada para agregar un botón en cada fila -->
+                        <TableCell fx:factory="controllers.ButtonCellFactory"/>
+                    </cellFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <!-- Botón para regresar a la vista principal -->
+        <Button text="Volver" layoutX="20.0" layoutY="380.0" onAction="#handleBackButtonAction" />
+    </children>
+</AnchorPane>

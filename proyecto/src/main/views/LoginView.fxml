@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+    <!-- Título -->
+    <Label text="Sistema de Turnos Médicos" style="-fx-font-size: 20px; -fx-text-fill: #5cb85c;" />
+
+    <!-- Campo de usuario -->
+    <TextField fx:id="usernameField" promptText="Usuario" style="-fx-pref-width: 250px;" />
+
+    <!-- Campo de contraseña -->
+    <PasswordField fx:id="passwordField" promptText="Contraseña" style="-fx-pref-width: 250px;" />
+
+    <!-- Botón de inicio de sesión -->
+    <Button text="Iniciar Sesión" onAction="#handleLogin" style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-pref-width: 250px;" />
+
+    <!-- Label de error si las credenciales no son correctas (será oculto por defecto) -->
+    <Label fx:id="errorLabel" text="Credenciales incorrectas. Intente de nuevo." style="-fx-text-fill: red; -fx-font-size: 14px;" visible="false" />
+</VBox>
+

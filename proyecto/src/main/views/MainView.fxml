@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MainController">
+    <children>
+        <Label text="Turnos Médicos" layoutX="150.0" layoutY="20.0" />
+        
+        <TableView fx:id="doctorTable" layoutX="20.0" layoutY="60.0" prefWidth="360.0" prefHeight="200.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Nombre" />
+                <TableColumn fx:id="specialtyColumn" text="Especialidad" />
+            </columns>
+        </TableView>
+        
+        <Button text="Cerrar Sesión" layoutX="150.0" layoutY="280.0" onAction="#handleLogout" />
+    </children>
+</AnchorPane>
+
